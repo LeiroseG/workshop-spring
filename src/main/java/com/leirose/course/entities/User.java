@@ -1,18 +1,25 @@
 package com.leirose.course.entities;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
+@Table(name = "tb_user")  // renomeando pra nao dar conflito com o H2
 public class User {
-    private  Long id;
-    private  String name;
-    private  String email;
-    private  String phone;
-    private  String password;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String email;
+    private String phone;
+    private String password;
 
-    public User(){
+    public User() {
 
     }
-    public User(Long id, String name, String email,String phone, String password) {
+
+    public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
