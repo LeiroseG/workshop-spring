@@ -28,7 +28,6 @@ public class User {
     public List<Order> getOrders() {
         return orders;
     }
-
     public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
         this.name = name;
