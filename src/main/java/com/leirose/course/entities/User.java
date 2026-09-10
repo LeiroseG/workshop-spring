@@ -2,6 +2,8 @@ package com.leirose.course.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -17,6 +19,12 @@ public class User {
 
     public User() {
 
+    }
+    @OneToMany(mappedBy = "client")
+    private List<Order> orders = new ArrayList<>();
+
+    public List<Order> getOrders() {
+        return orders;
     }
 
     public User(Long id, String name, String email, String phone, String password) {
