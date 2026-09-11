@@ -1,11 +1,11 @@
 package com.leirose.course.entities;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.CollectionIdJdbcTypeCode;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+
 @Entity
 @Table(name = "tb_product")
 public class Product {
@@ -17,12 +17,13 @@ public class Product {
     private Double price;
     private String imgURL;
 
-    @Transient
+    @ManyToMany
+    @JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
 
- public  Product(){
+    public Product() {
 
- }
+    }
 
     public Product(Long id, String name, String description, Double price, String imgURL) {
         this.id = id;
