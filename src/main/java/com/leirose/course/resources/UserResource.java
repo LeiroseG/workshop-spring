@@ -2,7 +2,6 @@ package com.leirose.course.resources;
 
 import com.leirose.course.entities.User;
 import com.leirose.course.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
